@@ -26,7 +26,7 @@ app.use(playlistRouter);
 
 
 // Listen for incoming request
-const port = 3131
+const port = process.env.PORT || 3131
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });

@@ -20,7 +20,7 @@ export const addPlaylist = async (req, res, next) => {
 export const getAllPlaylist = async (req, res, next) => {
     try {
         const result = await playlistModel.find();
-        res.status(201).json(result);
+        res.status(200).json(result);
         
     } catch (error) {
         next(error);
@@ -30,7 +30,7 @@ export const getAllPlaylist = async (req, res, next) => {
 export const getSinglePlaylist = async (req, res, next) => {
     try {
         const result = await playlistModel.findById(req.params.id);
-        res.status(201).json(result);
+        res.status(200).json(result);
         
     } catch (error) {
         next(error);
@@ -49,7 +49,7 @@ export const updatePlaylist = async (req, res, next) => {
 export const deletePlaylist = async (req, res, next) => {
     try {
         const result = await playlistModel.findByIdAndDelete(req.params.id);
-        res.status(201).json(result);
+        res.status(200).json(result);
     } catch (error) {
         next(error);
     }
