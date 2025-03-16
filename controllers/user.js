@@ -14,26 +14,6 @@ export const addUser = async (req, res, next) => {
     }
 }
 
-export const getUsers = async (req, res, next) => {
-    try {
-        const result = await userModel.find();
-        res.status(201).json(result);
-        
-    } catch (error) {
-        next(error);
-    }
-}
-
-export const getUser = async (req, res, next) => {
-    try {
-        const result = await userModel.findById(req.params.id);
-        res.status(201).json(result);
-        
-    } catch (error) {
-        next(error);
-    }
-}
-
 export const updateUser = async (req, res, next) => {
     try {
         const result = await userModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
